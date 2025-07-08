@@ -1057,52 +1057,150 @@
 // };
 
 // export default LoginPage;
+
+
+
+
+
+// login with id and password 
+// import React, { useState } from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// // import './LoginPage.css'; // Make sure this is addeds
+
+// const LoginPage = ({ onLogin }) => {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [showPassword, setShowPassword] = useState(false);
+//   const [errors, setErrors] = useState({});
+//   const [loading, setLoading] = useState(false);
+
+//   const navigate = useNavigate();
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     const newErrors = {};
+//     if (!username) newErrors.username = 'Username is required';
+//     if (!password) newErrors.password = 'Password is required';
+//     setErrors(newErrors);
+
+//     if (Object.keys(newErrors).length === 0) {
+//       try {
+//         setLoading(true);
+//         const res = await axios.post('http://192.168.1.6:5000/api/admin/login', {
+//           username,
+//           password,
+//         });
+
+//         setLoading(false);
+//         const { token, username: user } = res.data;
+
+//         if (token) {
+//           localStorage.setItem('token', token);
+//           localStorage.setItem('adminUser', user);
+//           if (onLogin) onLogin();
+//           navigate('/detailspage');
+//         } else {
+//           setErrors({ password: 'Login failed: Token not received' });
+//         }
+//       } catch (error) {
+//         setLoading(false);
+//         const msg = error.response?.data?.message || 'Invalid username or password';
+//         setErrors({ password: msg });
+//       }
+//     }
+//   };
+
+//   return (
+//     <div className="login-page">
+//       <div className="login-card">
+//         <img
+//           src="/img/marketinglogo.png"
+//           alt="Logo"
+//           className="login-logo"
+//         />
+//         <h4 className="login-welcome">Welcome, please sign in</h4>
+
+//         <form onSubmit={handleSubmit} noValidate>
+//           <div className="form-group">
+//             <label>
+//               <span className="text-danger">*</span> Username
+//             </label>
+//             <input
+//               type="text"
+//               className={`form-control ${errors.username ? 'is-invalid' : ''}`}
+//               value={username}
+//               onChange={(e) => setUsername(e.target.value)}
+//               placeholder="Enter your username"
+//               required
+//             />
+//             {errors.username && <div className="invalid-feedback">{errors.username}</div>}
+//           </div>
+
+//           <div className="form-group">
+//             <label>
+//               <span className="text-danger">*</span> Password
+//             </label>
+//             <div className="input-group">
+//               <input
+//                 type={showPassword ? 'text' : 'password'}
+//                 className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+//                 value={password}
+//                 onChange={(e) => setPassword(e.target.value)}
+//                 placeholder="Enter your password"
+//                 required
+//               />
+//               <button
+//                 type="button"
+//                 className="btn btn-outline-secondary"
+//                 onClick={() => setShowPassword(!showPassword)}
+//               >
+//                 <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+//               </button>
+//             </div>
+//             {errors.password && <div className="invalid-feedback d-block">{errors.password}</div>}
+//           </div>
+
+//           <div className="d-flex justify-content-between align-items-center mb-3">
+//             <Link to="/forgot-password" className="forgot-link">Forgot your password?</Link>
+//           </div>
+
+//           <button type="submit" className="btn button btn-magento w-100 mb-3" disabled={loading}>
+//             {loading ? 'Logging in...' : 'Sign In'}
+//           </button>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LoginPage;
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-// import './LoginPage.css'; // Make sure this is addeds
+
+// import './LoginPage.css'; // optional
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const newErrors = {};
-    if (!username) newErrors.username = 'Username is required';
-    if (!password) newErrors.password = 'Password is required';
-    setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      try {
-        setLoading(true);
-        const res = await axios.post('http://192.168.1.6:5000/api/admin/login', {
-          username,
-          password,
-        });
+    setLoading(true);
+    
+    // Simulate delay (optional)
+    setTimeout(() => {
+      localStorage.setItem('token', 'dummy-token');
+      localStorage.setItem('adminUser', username || 'admin');
 
-        setLoading(false);
-        const { token, username: user } = res.data;
-
-        if (token) {
-          localStorage.setItem('token', token);
-          localStorage.setItem('adminUser', user);
-          if (onLogin) onLogin();
-          navigate('/detailspage');
-        } else {
-          setErrors({ password: 'Login failed: Token not received' });
-        }
-      } catch (error) {
-        setLoading(false);
-        const msg = error.response?.data?.message || 'Invalid username or password';
-        setErrors({ password: msg });
-      }
-    }
+      if (onLogin) onLogin();
+      navigate('/detailspage');
+    }, 500);
   };
 
   return (
@@ -1122,13 +1220,11 @@ const LoginPage = ({ onLogin }) => {
             </label>
             <input
               type="text"
-              className={`form-control ${errors.username ? 'is-invalid' : ''}`}
+              className="form-control"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter your username"
-              required
             />
-            {errors.username && <div className="invalid-feedback">{errors.username}</div>}
           </div>
 
           <div className="form-group">
@@ -1138,11 +1234,10 @@ const LoginPage = ({ onLogin }) => {
             <div className="input-group">
               <input
                 type={showPassword ? 'text' : 'password'}
-                className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                className="form-control"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                required
               />
               <button
                 type="button"
@@ -1152,7 +1247,6 @@ const LoginPage = ({ onLogin }) => {
                 <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
               </button>
             </div>
-            {errors.password && <div className="invalid-feedback d-block">{errors.password}</div>}
           </div>
 
           <div className="d-flex justify-content-between align-items-center mb-3">

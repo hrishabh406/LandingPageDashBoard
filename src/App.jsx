@@ -97,7 +97,7 @@
 //         <Route path="/register" element={<Register />} />
 //         <Route path="/forgot-password" element={<ForgetPassword />} />
 //         <Route path="*" element={<Navigate to="/" />} />
-        
+
 //       </Routes>
 //     );
 //   }
@@ -127,7 +127,7 @@
 
 // export default App;
 
- 
+
 
 
 import React, { useState, useEffect } from 'react';
@@ -146,6 +146,8 @@ import Register from './Pages/Register';
 import ForgetPassword from './Pages/ForgetPassword';
 import LeadsTable from './Component/LeadsTable';
 import ExportLeads from './Component/ExportLeads';
+import Adds from './Pages/Adds';
+import Finalpage from './Pages/Finalpage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -169,7 +171,10 @@ function App() {
         <Route path="/login" element={<LoginPage onLogin={() => setIsLoggedIn(true)} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgetPassword />} />
+
+
         <Route path="*" element={<Navigate to="/" />} />
+        {/* <Route path="/active-ads" element={<ActiveAdsSlider />} /> */}
       </Routes>
     );
   }
@@ -201,6 +206,9 @@ function App() {
             <Route path="/profile" element={<ProfileSettings />} />
             <Route path="/leads" element={<LeadsTable />} />
             <Route path="/export" element={<ExportLeads />} />
+            <Route path="/adds" element={<Adds />} />
+            <Route path="/final-ads" element={<Finalpage />} />
+             <Route path="/active-ads" element={<Color />} />
             <Route path="*" element={<Navigate to="/dash" />} />
           </Routes>
         </div>

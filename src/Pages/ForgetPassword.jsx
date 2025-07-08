@@ -208,6 +208,7 @@ const ForgetPassword = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Email address</label>
+              <br /><br />
               <input
                 type="email"
                 className={`form-control ${error ? 'is-invalid' : ''}`}

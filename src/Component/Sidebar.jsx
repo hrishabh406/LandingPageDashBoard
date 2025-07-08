@@ -68,7 +68,8 @@
 
 
 import React from 'react';
-import { BiFont, BiPalette, BiImage, BiChevronDown, BiHome, BiGroup, BiDownload } from 'react-icons/bi';
+import { BiFont, BiPalette, BiImage, BiChevronDown, BiHome, BiGroup, BiDownload, BiUpload, BiEditAlt } from 'react-icons/bi';
+import { GiBigGear } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => (
@@ -87,14 +88,14 @@ const Sidebar = () => (
 
     <div className="sidebar-section">
       <p className="section-title">UI Components</p>
-      <Link to="/typography" className="sidebar-link">
+      {/* <Link to="/typography" className="sidebar-link">
         <BiHome className="sidebar-icon" />
         Typography
       </Link>
       <Link to="/color" className="sidebar-link">
         <BiPalette className="sidebar-icon" />
         Color
-      </Link>
+      </Link> */}
       <Link to="/leads" className="sidebar-link">
   {/* <i className="bi bi-people-fill me-2" /> */}
   <BiGroup className="sidebar-icon" />
@@ -106,14 +107,28 @@ const Sidebar = () => (
 <BiDownload className="sidebar-icon" />
 Export
 </Link>
+<Link to="/adds" className="sidebar-link"> 
+{/* <i class="bi bi-save me-2"></i>  */}
+<BiEditAlt className="sidebar-icon" />
+Add Ad's
+</Link><Link to="/final-ads" className="sidebar-link"> 
+{/* <i class="bi bi-save me-2"></i>  */}
+<BiUpload className="sidebar-icon" />
+Upload ad's
+</Link>
+<Link to="/active-ads" className="sidebar-link">
+  {/* <i className="bi bi-people-fill me-2" /> */}
+  <BiGroup className="sidebar-icon" />
+   Ad's Page
+</Link>
     </div>
 
     <div className="sidebar-section">
       <p className="section-title">Other</p>
       <Link to="/" className="sidebar-link d-flex justify-content-between align-items-center">
         <span>
-          <BiChevronDown className="sidebar-icon" />
-          Menu Levels
+          <GiBigGear className="sidebar-icon" />
+          Setting
         </span>
       </Link>
     </div>
