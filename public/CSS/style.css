@@ -154,6 +154,54 @@
   background-color: white;
 } */
 /* in App.css or global stylesheet */
+/* Fixed Sidebar */
+.custom-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  z-index: 1051;
+}
+
+/* Main content wrapper when sidebar is fixed */
+.main-content {
+  margin-left: 250px; /* same as sidebar width */
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Drawer for small screens */
+.drawer-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+  z-index: 1051;
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer-sidebar.open {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  width: calc(100% - 250px);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1050;
+}
+
 .custom-sidebar {
   position: sticky;
   top: 0;
