@@ -110,6 +110,11 @@ import Finalpage from './Pages/Finalpage';
 import PopupLeads from './Component/PopupLeads';
 import CreateEmpl from './Component/CreateEmpl';
 import Allemployee from './Component/Allemployee';
+import KendraLeads from './Component/KendraLeads';
+import SewaLeads from './Component/SewaLeads';
+import AmbulanceLeads from './Component/AmbulanceLeads';
+import InsuranceLeads from './Component/InsuranceLeads';
+import AllCardApply from './Component/AllCardApply';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -141,7 +146,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage onLogin={() => setIsLoggedIn(true)} />} />
         <Route path="/login" element={<LoginPage onLogin={() => setIsLoggedIn(true)} />} />
-        <Route path="/register" element={<Register />} />
+        {/* <Route path="/register" element={<Register />} /> */}
         <Route path="/forgot-password" element={<ForgetPassword />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
@@ -171,7 +176,16 @@ function App() {
           <Routes>
             <Route path="/Home" element={<Dashboard />} />
             <Route path="/Popup-Leads" element={<PopupLeads/>} />
-            <Route path="/color" element={<Color />} />
+            <Route path="/kendra-leads" element={<KendraLeads/>} />
+
+
+            <Route path="/sewa-leads" element={<SewaLeads/>} />
+            <Route path="/ambulance-leads" element={<AmbulanceLeads/>} />
+            <Route path="/insurance-leads" element={<InsuranceLeads/>} />
+            <Route path="/card-apply" element={<AllCardApply/>} />
+              {/* <Route path="/card-apply" element={<AllCardApply/>} /> */}
+
+
             <Route path="/details" element={<Detailspage />} />
             <Route path="/profile" element={<ProfileSettings />} />
             <Route path="/Contact_leads" element={<LeadsTable />} />

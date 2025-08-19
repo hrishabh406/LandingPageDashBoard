@@ -1018,10 +1018,10 @@ const Dashboard = () => {
     <div className="container-fluid px-2 px-md-4">
       {/* Summary Cards */}
       <div className="row mt-4">
-        <Card title="Total Leads" value={summary.totalLeads || 0} change="↑ 15.3%" changeColor="bg-success text-white px-2" extra="Compared to last week" />
-        <Card title="Total Uploads" value={summary.totalUploads || 0} change="↑ 9.8%" changeColor="bg-primary text-white px-2" extra="Files uploaded to system" />
-        <Card title="Today Leads" value={summary.todayLeads || 0} change="↓ 5.1%" changeColor="bg-warning text-dark px-2" extra="Leads captured today" />
-        <Card title="Today Uploads" value={summary.todayUploads || 0} change="↑ 2.7%" changeColor="bg-info text-white px-2" extra="Uploads made today" />
+        <Card title="Total Kendra" value={summary.totalLeads || 0} change="↑ 15.3%" changeColor="bg-success text-white px-2" extra="kendra Across India" />
+        <Card title="Total Empolyee" value={summary.totalUploads || 0} change="↑ 9.8%" changeColor="bg-primary text-white px-2" extra="Files uploaded to system" />
+        <Card title="Today leads" value={summary.todayLeads || 0} change="↓ 5.1%" changeColor="bg-warning text-dark px-2" extra="Leads captured today" />
+        <Card title="Today Arogay card" value={summary.todayUploads || 0} change="↑ 2.7%" changeColor="bg-info text-white px-2" extra="Uploads made today" />
       </div>
 
       {/* Dual Chart Section */}

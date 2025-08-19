@@ -201,7 +201,7 @@ const Sidebar = ({ onLogout }) => {
           Upload Ad's
         </Link> */}
 
-         <Link to="/final-ads" className="sidebar-link">
+         <Link to="/kendra-leads" className="sidebar-link">
           <BiUpload className="sidebar-icon" />
           Kendra Leads 
         </Link>
@@ -210,23 +210,23 @@ const Sidebar = ({ onLogout }) => {
           <BiUpload className="sidebar-icon" />
           Pop Leads
         </Link> 
-        <Link to="/final-ads" className="sidebar-link">
+        <Link to="/sewa-leads" className="sidebar-link">
           <BiUpload className="sidebar-icon" />
           Sewa Leads
         </Link>
 
-        <Link to="/active-ads" className="sidebar-link">
+        <Link to="ambulance-leads" className="sidebar-link">
           <BiBookAdd className="sidebar-icon" />
          Ambulance leads
         </Link>
 
-         <Link to="/final-ads" className="sidebar-link">
+         <Link to="/insurance-leads" className="sidebar-link">
           <BiUpload className="sidebar-icon" />
-          Incuarane Leads
+          Insurane Leads
         </Link>
 
 
-         <Link to="/final-ads" className="sidebar-link">
+         <Link to="/card-apply" className="sidebar-link">
           <BiUpload className="sidebar-icon" />
         Card applys 
         </Link>
