@@ -167,7 +167,7 @@ const Sidebar = ({ onLogout }) => {
   return (
     <div className="custom-sidebar">
       <div className="sidebar-header mb-4">
-        <h5>Marketing Mantra</h5>
+        <h5>Ruwa India</h5>
       </div>
 
       <div className="sidebar-section">
@@ -181,29 +181,59 @@ const Sidebar = ({ onLogout }) => {
       <div className="sidebar-section">
         <p className="section-title">Page Components</p>
 
-        <Link to="/leads" className="sidebar-link">
+        <Link to="/Contact_leads" className="sidebar-link">
           <BiGroup className="sidebar-icon" />
-          Leads
+          Contact Leads
         </Link>
 
-        <Link to="/export" className="sidebar-link">
+        {/* <Link to="/export" className="sidebar-link">
           <BiDownload className="sidebar-icon" />
           Export
-        </Link>
-
+        </Link> */}
+{/* 
         <Link to="/adds" className="sidebar-link">
           <BiEditAlt className="sidebar-icon" />
           Add Ad's
-        </Link>
+        </Link> */}
 
-        <Link to="/final-ads" className="sidebar-link">
+        {/* <Link to="/final-ads" className="sidebar-link">
           <BiUpload className="sidebar-icon" />
           Upload Ad's
+        </Link> */}
+
+         <Link to="/final-ads" className="sidebar-link">
+          <BiUpload className="sidebar-icon" />
+          Kendra Leads 
+        </Link>
+        
+         <Link to="/Popup-Leads" className="sidebar-link">
+          <BiUpload className="sidebar-icon" />
+          Pop Leads
+        </Link> 
+        <Link to="/final-ads" className="sidebar-link">
+          <BiUpload className="sidebar-icon" />
+          Sewa Leads
         </Link>
 
         <Link to="/active-ads" className="sidebar-link">
           <BiBookAdd className="sidebar-icon" />
-          Ad's Page
+         Ambulance leads
+        </Link>
+
+         <Link to="/final-ads" className="sidebar-link">
+          <BiUpload className="sidebar-icon" />
+          Incuarane Leads
+        </Link>
+
+
+         <Link to="/final-ads" className="sidebar-link">
+          <BiUpload className="sidebar-icon" />
+        Card applys 
+        </Link>
+
+         <Link to="/empolyee_list" className="sidebar-link">
+          <BiUpload className="sidebar-icon" />
+          Empolyee 
         </Link>
       </div>
 
@@ -213,6 +243,12 @@ const Sidebar = ({ onLogout }) => {
           <BiMaleFemale className="sidebar-icon" />
           Profile
         </Link>
+
+      <Link to="/createemply" className="sidebar-link d-flex align-items-center">
+          <BiMaleFemale className="sidebar-icon" />
+          Create
+        </Link>
+
 
         <button
           className="sidebar-link d-flex align-items-center w-100 bg-transparent border-0 text-start"

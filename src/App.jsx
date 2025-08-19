@@ -107,6 +107,9 @@ import LeadsTable from './Component/LeadsTable';
 import ExportLeads from './Component/ExportLeads';
 import Adds from './Pages/Adds';
 import Finalpage from './Pages/Finalpage';
+import PopupLeads from './Component/PopupLeads';
+import CreateEmpl from './Component/CreateEmpl';
+import Allemployee from './Component/Allemployee';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -167,15 +170,15 @@ function App() {
         <div className="p-4">
           <Routes>
             <Route path="/Home" element={<Dashboard />} />
-            <Route path="/typography" element={<Typography />} />
+            <Route path="/Popup-Leads" element={<PopupLeads/>} />
             <Route path="/color" element={<Color />} />
             <Route path="/details" element={<Detailspage />} />
             <Route path="/profile" element={<ProfileSettings />} />
-            <Route path="/leads" element={<LeadsTable />} />
+            <Route path="/Contact_leads" element={<LeadsTable />} />
             <Route path="/export" element={<ExportLeads />} />
-            <Route path="/adds" element={<Adds />} />
+            <Route path="/createemply" element={<CreateEmpl/>} />
             <Route path="/final-ads" element={<Finalpage />} />
-            <Route path="/active-ads" element={<Color />} />
+            <Route path="/empolyee_list" element={<Allemployee/>} />
             <Route path="*" element={<Navigate to="/Home" />} />
           </Routes>
         </div>
